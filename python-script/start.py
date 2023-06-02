@@ -119,7 +119,7 @@ def start_ecs_task():
             )['Parameters']['Value':]
 
             if current_service_task_desired_count != task_count_before_stopping:
-                print('Starting ECS tasks: setting {0} Service desiredCount = {1} ...'.format(service, task_count_before_stopping))
+                print('Current Service desiredCount is: {0}. Starting ECS tasks: setting {1} Service desiredCount to count recorded before stopping the service= {2} ...'.format(current_service_task_desired_count, service, task_count_before_stopping))
                 client_ecs.update_service (
                     cluster = cluster, 
                     service = service,
