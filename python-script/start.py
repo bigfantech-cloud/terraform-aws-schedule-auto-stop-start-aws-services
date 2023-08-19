@@ -139,6 +139,6 @@ def lambda_handler(event, context):
             if all_rds_running:
                 start_ecs_task()
             else:
-                print('DID NOT EXECUTE: START ECS TASK, NOT ALL RDS ARE IN AVAILABLE STATE')
+                print('SKIPPED: START ECS TASK. NOT ALL RDS ARE IN AVAILABLE STATE...')
         else:
             start_ecs_task()
